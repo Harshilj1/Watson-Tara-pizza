@@ -5,7 +5,10 @@ const time = new Date().getTime().toString()
 const orderid = require('order-id')(time)
 const id = orderid.generate()
 console.log(id)
-app.post('/', (req, res) => {
+app.get('/', (req, res) => {
+  res.send('GET request to the homepage')
+})
+app.post('/data', (req, res) => {
     const post = new Order({
         order_id : id,
         name : req.body.name,

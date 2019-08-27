@@ -13,8 +13,5 @@ app.listen(port, () => {
 mongoose.connect("mongodb+srv://harshil:harshil121@cluster0-cbwck.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true }, () => {
     console.log("Connect to MongoDB")
 })
-app.use('/data',orderMiddleware)
-app.get('/', (req, res) => {
-  res.send('Welcome')
-})
+app.use('/',orderMiddleware)
 
