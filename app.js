@@ -45,11 +45,13 @@ app.post('/data', (req, res) => {
             status: "Your Order is being prepared"
         })
         post.save().then(result => {
-            console.log(post)
+            console.log(result)
             res.json({
                 success: true,
                 orderId: id
             })
+        }).catch(error =>{
+            console.log(error)
         })
     }
 });
