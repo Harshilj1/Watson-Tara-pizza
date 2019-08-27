@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 app.post('/data', (req, res) => {
     if (req.body.orderId) {
-        console.log("WE have an order")
+        console.log(req.body.orderId)
     }
     else {
         const post = new Order({
@@ -40,11 +40,11 @@ app.post('/data', (req, res) => {
             pizza_name: req.body.pizza_name,
             status: "Your Order is being prepared"
         })
+        console.log(post)
+        res.json({
+            success: true,
+            orderId: id
+        })
     }
-    console.log(post)
-    res.json({
-        success: true,
-        orderId: id
-    })
 });
 
