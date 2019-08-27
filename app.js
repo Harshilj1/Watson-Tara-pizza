@@ -25,10 +25,14 @@ app.get('/', (req, res) => {
 
 app.post('/data', (req, res) => {
     if (req.body.orderId) {
-        console.log(req.body.orderId)
-        Order.findById(req.body.orderId).then(result => {
+        console.log("Order ID",req.body.orderId)
+        Order.find({order_id : req.body.orderId}).then(result => {
             console.log(result)
             res.json(result)
+        }).catch(error =>{
+            res.json({
+                error
+            })
         })
     }
     else {
