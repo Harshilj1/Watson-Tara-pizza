@@ -29,7 +29,10 @@ app.post('/data', (req, res) => {
         Order.find({}).then(result => {
             filteredResult = result.filter(result => {return result.order_id = req.body.orderId})
             console.log("filteredResult",filteredResult)
-            res.json(filteredResult)
+            res.json({
+                success : true,
+                filteredResult
+            })
         }).catch(error =>{
             res.json({
                 error
