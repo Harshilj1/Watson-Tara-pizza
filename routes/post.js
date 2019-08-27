@@ -3,7 +3,7 @@ const time = new Date().getTime().toString()
 const orderid = require('order-id')(time)
 const id = orderid.generate()
 console.log(id)
-app.post('/test', (req, res) => {
+app.post('/', (req, res) => {
     const post = new Order({
         order_id : id,
         name : req.body.name,
