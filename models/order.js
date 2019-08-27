@@ -10,7 +10,7 @@ let pizza = new mongoose.Schema({
     },
     mobile: {
         type: String,
-        required: true
+        required: false
     },
     city: {
         type: String,

@@ -35,7 +35,7 @@ app.post('/data', (req, res) => {
         const post = new Order({
             order_id: id,
             name: req.body.name,
-            mobile: req.body.mobile,
+            mobile: req.body.number,
             city: req.body.city,
             pin: req.body.pin,
             address: req.body.address,
@@ -44,6 +44,7 @@ app.post('/data', (req, res) => {
             pizza_name: req.body.pizza_name,
             status: "Your Order is being prepared"
         })
+        console.log(post)
         post.save().then(result => {
             console.log(result)
             res.json({
