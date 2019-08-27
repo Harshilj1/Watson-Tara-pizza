@@ -37,6 +37,9 @@ app.post('/data', (req, res) => {
         status : "Your Order is being prepared"
     })
     console.log(post)
-    res.send("Hi")
+    res.json({
+        success : true,
+        orderId : id
+    })
 });
 
